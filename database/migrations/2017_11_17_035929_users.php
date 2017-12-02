@@ -17,7 +17,7 @@ class Users extends Migration
             $table->increments('id');
 			$table->string('fname');
 			$table->string('lname');
-            $table->json('meta');
+            $table->json('meta')->nullable();
             $table->timestamps();
         });
     }

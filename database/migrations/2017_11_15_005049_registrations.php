@@ -18,7 +18,7 @@ class Registrations extends Migration
 			$table->integer('tenant_id');
             $table->integer('user_id');
             $table->integer('course_id');
-            $table->json('meta');
+            $table->json('meta')->nullable();
             $table->timestamps();
         });
     }

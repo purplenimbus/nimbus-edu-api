@@ -17,8 +17,8 @@ class Courses extends Migration
             $table->increments('id');
             $table->integer('tenant_id');
             $table->string('name');
-            $table->string('description');
-            $table->json('meta');
+            $table->string('description')->nullable();
+            $table->json('meta')->nullable();
             $table->timestamps();
         });
     }

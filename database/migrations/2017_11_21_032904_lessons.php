@@ -21,7 +21,7 @@ class Lessons extends Migration
             $table->string('title');
             $table->mediumText('description');
             $table->longText('content');
-            $table->json('meta');
+            $table->json('meta')->nullable();
             $table->timestamps();
         });
     }
