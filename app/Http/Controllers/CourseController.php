@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Course as Course;
 use App\Lesson as Lesson;
 use App\Registration as Registration;
+use App\Tenant as Tenant;
 
 class CourseController extends Controller
 {
@@ -127,4 +128,15 @@ class CourseController extends Controller
 			return response()->json(['message' => $message],404);
 		}
     }
+	
+	public function getTenant($tenant){
+		try{
+			$tenant = Tenant::where('username', $tenant)->first();
+			
+			return $tenant;
+			
+		}catch(Exception $e){
+			return false;
+		}
+	}
 }
